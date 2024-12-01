@@ -1,22 +1,18 @@
 #include <iostream>
-#include <utility>
+#include <vector>
 
-#include "type_traits.h"
-#include "alloc.h"
-#include "util.h"
+#include "iterator.h"
 
 int main() {
 
-    std::cout << wstl::is_pair<wstl::pair<int, int>>::value << std::endl;
+	// 使用指针作为迭代器
+	int arr[] = {1, 2, 3, 4, 5};
+	int *ptr = arr;
 
-    int a = 10;
+	std::cout << "\nPointer as Iterator:" << std::endl;
+	std::cout << "Category: " << typeid(typename wstl::iterator_traits<decltype(ptr)>::iterator_category).name() << std::endl;
+	std::cout << "Value Type: " << typeid(typename wstl::iterator_traits<decltype(ptr)>::value_type).name() << std::endl;
 
-    int &&b = wstl::move(a);
 
-    a = 20;
-
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-
-    return 0;
+	return 0;
 }
