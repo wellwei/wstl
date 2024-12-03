@@ -1,4 +1,4 @@
-
+﻿
 // File: util.h
 
 // Description: 本文件定义了一些工具函数，包括 move, forward, swap, pair 等。

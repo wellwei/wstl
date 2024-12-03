@@ -1,4 +1,4 @@
-add_library(wstl INTERFACE)
+﻿add_library(wstl INTERFACE)
 
 # 设置头文件路径
 target_include_directories(wstl INTERFACE

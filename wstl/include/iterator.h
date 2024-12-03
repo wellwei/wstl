@@ -1,4 +1,4 @@
-#ifndef WSTL_ITERATOR_H
+﻿#ifndef WSTL_ITERATOR_H
 #define WSTL_ITERATOR_H
 
 #include <cstddef>
