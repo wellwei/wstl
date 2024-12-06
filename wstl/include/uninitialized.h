@@ -144,8 +144,8 @@ namespace wstl {
 
 	template <class ForwardIterator, class Size, class T>
 	ForwardIterator uninitialized_fill_n(ForwardIterator first, Size n, const T &value) {
-		return uncheck_uninit_fill_n(first, n, value,
-									 std::is_trivially_copy_assignable<typename iterator_traits<ForwardIterator>::value_type>());
+		return unchecked_uninit_fill_n(first, n, value,
+									   std::is_trivially_copy_assignable<typename iterator_traits<ForwardIterator>::value_type>());
 	}
 
 	/**
@@ -178,7 +178,7 @@ namespace wstl {
 	template <class InputIterator, class ForwardIterator>
 	ForwardIterator uninitialized_move(InputIterator first, InputIterator last, ForwardIterator result) {
 		return wstl::unchecked_uninit_move(first, last, result,
-										   std::is_trivially_assignable<typename iterator_traits<InputIterator>::value_type>());
+										   std::is_trivially_move_assignable<typename iterator_traits<InputIterator>::value_type>());
 	}
 
 	/**
@@ -211,7 +211,7 @@ namespace wstl {
 	template <class InputIterator, class Size, class ForwardIterator>
 	ForwardIterator uninitialized_move_n(InputIterator first, Size n, ForwardIterator result) {
 		return wstl::unchecked_uninit_move_n(first, n, result,
-											 std::is_trivially_assignable<typename iterator_traits<InputIterator>::value_type>());
+											 std::is_trivially_move_assignable<typename iterator_traits<InputIterator>::value_type>());
 	}
 }
 

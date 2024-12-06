@@ -350,7 +350,7 @@ namespace wstl {
 
 	template <class BidirectionalIterator1, class BidirectionalIterator2>
 	BidirectionalIterator2
-	move_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator1 result) {
+	move_backward(BidirectionalIterator1 first, BidirectionalIterator1 last, BidirectionalIterator2 result) {
 		return unchecked_move_backward(first, last, result);
 	}
 
